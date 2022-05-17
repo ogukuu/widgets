@@ -1,8 +1,10 @@
 package com.ogukuu.widgets.view.screens
 
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -41,8 +43,20 @@ fun MainScreen(navHostController: NavHostController) {
                 color = MaterialTheme.colors.background
             ) {
                 Column(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(
+                            state = ScrollState(initial = 0)
+                        )
                 ) {
+                    WidgetCard(navHostController, TestWidget(1))
+                    WidgetCard(navHostController, TestWidget(2))
+                    WidgetCard(navHostController, TestWidget(3))
+                    WidgetCard(navHostController, TestWidget(4))
+                    WidgetCard(navHostController, TestWidget(1))
+                    WidgetCard(navHostController, TestWidget(2))
+                    WidgetCard(navHostController, TestWidget(3))
+                    WidgetCard(navHostController, TestWidget(4))
                     WidgetCard(navHostController, TestWidget(1))
                     WidgetCard(navHostController, TestWidget(2))
                     WidgetCard(navHostController, TestWidget(3))
