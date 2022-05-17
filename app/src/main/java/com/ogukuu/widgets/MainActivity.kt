@@ -5,15 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.ogukuu.widgets.navigation.WidgetsNavHost
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
-import com.ogukuu.widgets.view.screens.AppScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             WidgetsTheme {
-                AppScreen()
+                WidgetsNavHost(rememberNavController())
             }
         }
     }
@@ -22,6 +23,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DefaultPreview() {
     WidgetsTheme {
-        AppScreen()
+        WidgetsNavHost(rememberNavController())
     }
 }

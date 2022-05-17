@@ -11,7 +11,7 @@ import com.ogukuu.widgets.view.screens.WidgetDescriptionScreen
 fun WidgetsNavHost(navHostController: NavHostController) {
 
     NavHost(navController = navHostController, startDestination = WidgetsNavRoute.Main.route){
-        composable(WidgetsNavRoute.Main.route){ MainScreen()}
-        composable(WidgetsNavRoute.WidgetDescription.route){ WidgetDescriptionScreen()}
+        composable(WidgetsNavRoute.Main.route){ MainScreen(navHostController)}
+        composable(WidgetsNavRoute.WidgetDescription.route){ WidgetDescriptionScreen(navHostController)}
     }
 }
