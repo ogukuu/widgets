@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,7 +19,6 @@ import androidx.navigation.compose.rememberNavController
 import com.ogukuu.widgets.R
 import com.ogukuu.widgets.navigation.WidgetsNavRoute
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
-import com.ogukuu.widgets.view.elements.WidgetCard
 
 @Composable
 fun WidgetDescriptionScreen(navHostController: NavHostController) {
@@ -52,11 +50,7 @@ fun WidgetDescriptionScreen(navHostController: NavHostController) {
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colors.background
             ) {
-                Column(
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    Text(text = "WidgetDescriptionScreen")
-                }
+                Text(text = "WidgetDescriptionScreen")
             }
         }
     )

@@ -3,7 +3,6 @@ package com.ogukuu.widgets.view.screens
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,9 +14,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ogukuu.widgets.R
-import com.ogukuu.widgets.navigation.WidgetsNavHost
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
 import com.ogukuu.widgets.view.elements.WidgetCard
+import com.ogukuu.widgets.widgets.testwidget.TestWidget
 
 @Composable
 fun MainScreen(navHostController: NavHostController) {
@@ -44,10 +43,10 @@ fun MainScreen(navHostController: NavHostController) {
                 Column(
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    WidgetCard(navHostController)
-                    WidgetCard(navHostController)
-                    WidgetCard(navHostController)
-                    WidgetCard(navHostController)
+                    WidgetCard(navHostController, TestWidget(1))
+                    WidgetCard(navHostController, TestWidget(2))
+                    WidgetCard(navHostController, TestWidget(3))
+                    WidgetCard(navHostController, TestWidget(4))
                 }
             }
         }

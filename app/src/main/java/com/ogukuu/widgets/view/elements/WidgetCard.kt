@@ -13,10 +13,12 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ogukuu.widgets.navigation.WidgetsNavRoute
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
+import com.ogukuu.widgets.widgets.Widget
+import com.ogukuu.widgets.widgets.testwidget.TestWidget
 
 
 @Composable
-fun WidgetCard(navHostController: NavHostController) {
+fun WidgetCard(navHostController: NavHostController, widget: Widget) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -31,9 +33,7 @@ fun WidgetCard(navHostController: NavHostController) {
                     .padding(all = 8.dp),
                 contentAlignment = Alignment.Center
             ){
-                Text(
-                    text = "Widget",
-                )
+                widget.Item()
             }
             Box(
                 modifier = Modifier
@@ -46,9 +46,7 @@ fun WidgetCard(navHostController: NavHostController) {
                     ),
                 contentAlignment = Alignment.CenterStart
             ){
-                Text(
-                    text = "Widget Description",
-                )
+                widget.Description()
             }
         }
     }
@@ -58,6 +56,6 @@ fun WidgetCard(navHostController: NavHostController) {
 @Composable
 fun WidgetCardPreview(){
     WidgetsTheme {
-        WidgetCard(navHostController = rememberNavController())
+        WidgetCard(navHostController = rememberNavController(), TestWidget(0))
     }
 }
