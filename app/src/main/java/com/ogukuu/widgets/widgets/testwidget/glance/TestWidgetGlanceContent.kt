@@ -1,5 +1,6 @@
 package com.ogukuu.widgets.widgets.testwidget.glance
 
+import android.provider.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.datastore.preferences.core.Preferences
@@ -8,6 +9,7 @@ import androidx.glance.GlanceModifier
 import androidx.glance.action.clickable
 import androidx.glance.appwidget.action.actionRunCallback
 import androidx.glance.currentState
+import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
@@ -22,7 +24,8 @@ fun TestWidgetGlanceContent(modifier: GlanceModifier) {
         modifier = modifier
             .clickable(
                 onClick = actionRunCallback<TestWidgetGlanceAction>()
-            )
+            ),
+        contentAlignment = Alignment.Center
     ) {
         Text(
             text = "TEST",

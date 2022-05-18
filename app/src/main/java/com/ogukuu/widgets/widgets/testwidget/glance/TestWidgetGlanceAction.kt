@@ -7,6 +7,7 @@ import androidx.glance.action.ActionParameters
 import androidx.glance.appwidget.action.ActionCallback
 import androidx.glance.appwidget.state.updateAppWidgetState
 import androidx.glance.state.PreferencesGlanceStateDefinition
+import com.ogukuu.widgets.widgets.monochrome.mono
 
 class TestWidgetGlanceAction: ActionCallback {
     override suspend fun onRun(
@@ -19,6 +20,7 @@ class TestWidgetGlanceAction: ActionCallback {
                 .apply {
                     val colorOfWidget = this[booleanPreferencesKey(TestWidgetGlance.COLOR_PREFS_KEY)] ?:false
                     this[booleanPreferencesKey(TestWidgetGlance.COLOR_PREFS_KEY)] = !colorOfWidget
+                    //mono(context, colorOfWidget)
                 }
         }
         TestWidgetGlance().update(context, glanceId)
