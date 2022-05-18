@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">widgets</string>
+    <string name="first_widget">first widget</string>
 </resources>
