@@ -2,6 +2,9 @@ package com.ogukuu.widgets.widgets.firstwidget
 
 import android.annotation.SuppressLint
 import android.content.Context
+import androidx.compose.material.Icon
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
@@ -29,10 +32,7 @@ fun FirstWidgetCounter(
     modifier: GlanceModifier
 ) {
     Text(
-        text = context.getString(
-            R.string.glasses_of_water_format,
-            glassesOfWater
-        ),
+        text = "Glasses of Water: $glassesOfWater",
         modifier = modifier,
         style = TextStyle(
             fontWeight = FontWeight.Bold,
@@ -54,15 +54,8 @@ fun FirstWidgetGoal(
 ) {
     Text(
         text = when {
-            glassesOfWater >= RECOMMENDED_DAILY_GLASSES -> context.getString(
-                R.string.goal_met
-            )
-            else -> {
-                context.getString(
-                    R.string.daily_glass_goal,
-                    RECOMMENDED_DAILY_GLASSES
-                )
-            }
+            glassesOfWater >= RECOMMENDED_DAILY_GLASSES -> "You\'ve met the goal!"
+            else -> { "Daily Glass Goal:" }
         },
         modifier = modifier,
         style = TextStyle(
@@ -84,18 +77,16 @@ fun FirstWidgetButtonLayout(
         modifier = modifier,
         verticalAlignment = Alignment.Vertical.CenterVertically
     ) {
-        Image(
-            provider = ImageProvider(resId = R.drawable.ic_baseline_delete_outline_24),
-            contentDescription = "Delete Icon",
+        Text(
+            text = "Del",
             modifier = GlanceModifier
                 .clickable(
                     onClick = actionRunCallback<ClearWaterClickAction>()
                 )
                 .defaultWeight()
         )
-        Image(
-            provider = ImageProvider(resId = R.drawable.ic_baseline_add_24),
-            contentDescription = "Add Icon",
+        Text(
+            text = "Add",
             modifier = GlanceModifier
                 .clickable(
                     onClick = actionRunCallback<AddWaterClickAction>()
