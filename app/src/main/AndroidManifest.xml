@@ -16,7 +16,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Widgets">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +25,7 @@
         </activity>
 
         <receiver
+            android:label="@string/first_widget"
             android:name=".widgets.firstwidget.FirstWidgetReceiver"
             android:enabled="true"
             android:exported="false">
@@ -36,6 +36,20 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/first_widget_info" />
+        </receiver>
+
+        <receiver
+            android:label="@string/test_widget"
+            android:name=".widgets.testwidget.glance.TestWidgetGlanceReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/test_widget_info" />
         </receiver>
     </application>
 
