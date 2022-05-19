@@ -1,6 +1,9 @@
 package com.ogukuu.widgets.widgets.testwidget.glance
 
 import android.content.Context
+import android.content.Intent
+import android.provider.Settings
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.glance.GlanceId
 import androidx.glance.action.ActionParameters
@@ -20,7 +23,6 @@ class TestWidgetGlanceAction: ActionCallback {
                 .apply {
                     val colorOfWidget = this[booleanPreferencesKey(TestWidgetGlance.COLOR_PREFS_KEY)] ?:false
                     this[booleanPreferencesKey(TestWidgetGlance.COLOR_PREFS_KEY)] = !colorOfWidget
-                    //mono(context, colorOfWidget)
                 }
         }
         TestWidgetGlance().update(context, glanceId)

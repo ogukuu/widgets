@@ -19,10 +19,6 @@ class TestWidgetGlance: GlanceAppWidget() {
         TestWidgetGlanceContent(
             modifier = GlanceModifier
                 .fillMaxSize()
-                .background(
-                    day = Color.Blue,
-                    night = Color.DarkGray
-                )
                 .appWidgetBackground()
                 .cornerRadius(16.dp)
                 .padding(8.dp),
