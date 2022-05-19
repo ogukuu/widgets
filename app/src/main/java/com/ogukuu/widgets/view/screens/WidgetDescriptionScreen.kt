@@ -1,6 +1,5 @@
 package com.ogukuu.widgets.view.screens
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -9,7 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -18,6 +17,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.ogukuu.widgets.R
 import com.ogukuu.widgets.navigation.WidgetsNavRoute
+import com.ogukuu.widgets.ui.theme.Grey_55
+import com.ogukuu.widgets.ui.theme.Grey_DD
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
 
 @Composable
@@ -25,8 +26,8 @@ fun WidgetDescriptionScreen(navHostController: NavHostController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                backgroundColor = Color.Blue,
-                contentColor = Color.White,
+                backgroundColor = Grey_55,
+                contentColor = Grey_DD,
                 elevation = 12.dp,
                 contentPadding = PaddingValues(start = 0.dp)
             ){
@@ -48,7 +49,7 @@ fun WidgetDescriptionScreen(navHostController: NavHostController) {
         content = {
             Surface(
                 modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colors.background
+                color = colorResource(id = R.color.white)
             ) {
                 Text(text = "WidgetDescriptionScreen")
             }

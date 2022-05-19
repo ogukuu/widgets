@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 abstract class Widget {
 
     @Composable
-    abstract fun Item()
+    abstract fun IconWidget()
 
     @Composable
     abstract fun Description()

@@ -1,16 +1,12 @@
 package com.ogukuu.widgets.widgets.testwidget.glance
 
 import android.content.Context
-import android.content.Intent
-import android.provider.Settings
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.glance.GlanceId
 import androidx.glance.action.ActionParameters
 import androidx.glance.appwidget.action.ActionCallback
 import androidx.glance.appwidget.state.updateAppWidgetState
 import androidx.glance.state.PreferencesGlanceStateDefinition
-import com.ogukuu.widgets.widgets.monochrome.mono
 
 class TestWidgetGlanceAction: ActionCallback {
     override suspend fun onRun(

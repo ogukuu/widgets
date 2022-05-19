@@ -1,5 +1,6 @@
 package com.ogukuu.widgets.widgets.testwidget
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Card
 import androidx.compose.material.Text
@@ -8,13 +9,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.ogukuu.widgets.widgets.Widget
 
-class TestWidget(val i: Int): Widget() {
+class TestWidget(private val i: Int): Widget() {
     
     @Composable
-    override fun Item() {
+    override fun IconWidget() {
         Card(
             modifier = Modifier
-                .size(40.dp)
+                .fillMaxSize()
         ) {
             Text(text = "TW - $i")
         }

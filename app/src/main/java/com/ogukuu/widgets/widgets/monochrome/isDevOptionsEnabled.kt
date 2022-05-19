@@ -1,10 +1,7 @@
 package com.ogukuu.widgets.widgets.monochrome
 
 import android.content.Context
-import android.content.Intent
 import android.provider.Settings
-import androidx.core.content.res.TypedArrayUtils.getString
-import androidx.glance.LocalContext
 
 fun isDevOptionsEnabled(context: Context): String {
     return Settings.Global.getString(context.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED)
