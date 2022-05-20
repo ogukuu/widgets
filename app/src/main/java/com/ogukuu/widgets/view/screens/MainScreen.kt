@@ -54,18 +54,7 @@ fun MainScreen(navHostController: NavHostController) {
                             state = ScrollState(initial = 0)
                         )
                 ) {
-                    WidgetCard(navHostController, TestWidget(1))
-                    WidgetCard(navHostController, TestWidget(2))
-                    WidgetCard(navHostController, TestWidget(3))
-                    WidgetCard(navHostController, TestWidget(4))
-                    WidgetCard(navHostController, TestWidget(1))
-                    WidgetCard(navHostController, TestWidget(2))
-                    WidgetCard(navHostController, TestWidget(3))
-                    WidgetCard(navHostController, TestWidget(4))
-                    WidgetCard(navHostController, TestWidget(1))
-                    WidgetCard(navHostController, TestWidget(2))
-                    WidgetCard(navHostController, TestWidget(3))
-                    WidgetCard(navHostController, TestWidget(4))
+                    WidgetCard(navHostController, TestWidget())
                 }
             }
         }

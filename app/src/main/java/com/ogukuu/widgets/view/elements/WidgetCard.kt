@@ -67,6 +67,6 @@ fun WidgetCard(navHostController: NavHostController, widget: Widget) {
 @Composable
 fun WidgetCardPreview(){
     WidgetsTheme {
-        WidgetCard(navHostController = rememberNavController(), TestWidget(0))
+        WidgetCard(navHostController = rememberNavController(), TestWidget())
     }
 }
