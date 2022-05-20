@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.ogukuu.widgets.R
 import com.ogukuu.widgets.ui.theme.Grey_44
 import com.ogukuu.widgets.ui.theme.Grey_BB
@@ -56,11 +57,24 @@ class TestWidget(): Widget() {
         Column (
             modifier = Modifier
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.Bottom,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ){
-            IconWidget()
-            Divider()
+            Box(
+                modifier = Modifier
+                    .padding(all = 10.dp)
+                    .requiredSize(100.dp),
+                contentAlignment = Alignment.Center
+            ){
+                IconWidget()
+            }
+            Divider(
+                modifier = Modifier
+                    .padding(
+                        top = 10.dp,
+                        bottom = 10.dp
+                    )
+            )
             Description()
         }
     }

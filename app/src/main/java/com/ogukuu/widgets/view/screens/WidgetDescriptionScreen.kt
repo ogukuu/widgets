@@ -20,9 +20,11 @@ import com.ogukuu.widgets.navigation.WidgetsNavRoute
 import com.ogukuu.widgets.ui.theme.Grey_55
 import com.ogukuu.widgets.ui.theme.Grey_DD
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
+import com.ogukuu.widgets.widgets.Widget
+import com.ogukuu.widgets.widgets.testwidget.TestWidget
 
 @Composable
-fun WidgetDescriptionScreen(navHostController: NavHostController) {
+fun WidgetDescriptionScreen(navHostController: NavHostController, widget: Widget?) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -51,7 +53,7 @@ fun WidgetDescriptionScreen(navHostController: NavHostController) {
                 modifier = Modifier.fillMaxSize(),
                 color = colorResource(id = R.color.white)
             ) {
-                Text(text = "WidgetDescriptionScreen")
+                widget?.DescriptionScreen()
             }
         }
     )
@@ -61,6 +63,6 @@ fun WidgetDescriptionScreen(navHostController: NavHostController) {
 @Composable
 fun WidgetDescriptionScreenPreview(){
     WidgetsTheme {
-        WidgetDescriptionScreen(navHostController = rememberNavController())
+        WidgetDescriptionScreen(navHostController = rememberNavController(), TestWidget())
     }
 }

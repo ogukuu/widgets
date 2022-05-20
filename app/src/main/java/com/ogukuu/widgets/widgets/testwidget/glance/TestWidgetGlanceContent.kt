@@ -1,8 +1,6 @@
 package com.ogukuu.widgets.widgets.testwidget.glance
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.sp
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.glance.GlanceModifier
@@ -15,7 +13,8 @@ import androidx.glance.layout.Box
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import com.ogukuu.widgets.ui.theme.getGrey
+import com.ogukuu.widgets.ui.theme.Grey_44
+import com.ogukuu.widgets.ui.theme.Grey_BB
 import com.ogukuu.widgets.widgets.testwidget.glance.TestWidgetGlance.Companion.COLOR_PREFS_KEY
 
 @Composable
@@ -29,21 +28,15 @@ fun TestWidgetGlanceContent(modifier: GlanceModifier) {
             )
             .background(
                 color = when (colorOfWidget){
-                    true -> getGrey(20)
-                    false -> Color.Gray
+                    true -> Grey_44
+                    false -> Grey_BB
                 }
             ),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = "TEST",
-            style = TextStyle(
-                color = when(colorOfWidget){
-                    true -> ColorProvider(Color.Gray)
-                    false -> ColorProvider(Color.White)
-                },
-                fontSize = 18.sp
-            )
-        )
+        when (colorOfWidget){
+            true -> Text(text = "ON", style = TextStyle(color = ColorProvider(Grey_BB)))
+            false -> Text(text = "OFF", style = TextStyle(color = ColorProvider(Grey_44)))
+        }
     }
 }

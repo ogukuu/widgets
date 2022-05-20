@@ -1,15 +1,11 @@
 package com.ogukuu.widgets.view.elements
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
-import androidx.compose.material.Divider
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -24,7 +20,7 @@ import com.ogukuu.widgets.widgets.testwidget.TestWidget
 
 
 @Composable
-fun WidgetCard(navHostController: NavHostController, widget: Widget) {
+fun WidgetCard(navHostController: NavHostController, widget: Widget, nameWidget: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -52,7 +48,9 @@ fun WidgetCard(navHostController: NavHostController, widget: Widget) {
                     .fillMaxWidth()
                     .clickable(
                         onClick = {
-                            navHostController.navigate(WidgetsNavRoute.WidgetDescription.route)
+                            navHostController.navigate(
+                                "${WidgetsNavRoute.WidgetDescription.route}/$nameWidget"
+                            )
                         }
                     ),
                 contentAlignment = Alignment.CenterStart
@@ -67,6 +65,6 @@ fun WidgetCard(navHostController: NavHostController, widget: Widget) {
 @Composable
 fun WidgetCardPreview(){
     WidgetsTheme {
-        WidgetCard(navHostController = rememberNavController(), TestWidget())
+        WidgetCard(navHostController = rememberNavController(), TestWidget(), "")
     }
 }

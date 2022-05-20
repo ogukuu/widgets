@@ -23,10 +23,10 @@ import com.ogukuu.widgets.ui.theme.Grey_55
 import com.ogukuu.widgets.ui.theme.Grey_DD
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
 import com.ogukuu.widgets.view.elements.WidgetCard
-import com.ogukuu.widgets.widgets.testwidget.TestWidget
+import com.ogukuu.widgets.widgets.WidgetStorage
 
 @Composable
-fun MainScreen(navHostController: NavHostController) {
+fun MainScreen(navHostController: NavHostController, widgetsStorage: WidgetStorage) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -54,7 +54,9 @@ fun MainScreen(navHostController: NavHostController) {
                             state = ScrollState(initial = 0)
                         )
                 ) {
-                    WidgetCard(navHostController, TestWidget())
+                    for ((k, v) in widgetsStorage.widgets){
+                        WidgetCard(navHostController = navHostController, widget = v, k)
+                    }
                 }
             }
         }
@@ -65,6 +67,6 @@ fun MainScreen(navHostController: NavHostController) {
 @Composable
 fun MainScreenPreview(){
     WidgetsTheme {
-        MainScreen(navHostController = rememberNavController())
+        MainScreen(navHostController = rememberNavController(),WidgetStorage())
     }
 }
