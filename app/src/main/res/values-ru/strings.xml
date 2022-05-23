@@ -2,4 +2,7 @@
     <string name="app_name">виджеты</string>
     <string name="test_widget">тестовый виджет</string>
     <string name="test_widget_description">Тестовый виджет. При нажатии меняет цвет и текст.</string>
+    <string name="open_dev_options_widget">открыть меню "Для разработчиков"</string>
+    <string name="open_dev_options_widget_description">Виджет открывает меню "Для разработчиков".</string>
+    <string name="open_dev_options_widget_text">Открыть\nменю\nразраба</string>
 </resources>

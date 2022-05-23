@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.ogukuu.widgets.navigation.WidgetsNavHost
 import com.ogukuu.widgets.ui.theme.WidgetsTheme
 import com.ogukuu.widgets.widgets.WidgetStorage
+import com.ogukuu.widgets.widgets.open_dev_options.OpenDevOptionsWidget
 import com.ogukuu.widgets.widgets.testwidget.TestWidget
 
 class MainActivity : ComponentActivity() {
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
 
                 // add widgets
                 widgets.add(getString(R.string.test_widget), TestWidget()) // getString(R.string.test_widget) this line has localization, problems?
+                widgets.add(getString(R.string.open_dev_options_widget), OpenDevOptionsWidget())
                 //-----
 
                 WidgetsNavHost(rememberNavController(), widgets)

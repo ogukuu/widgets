@@ -2,4 +2,7 @@
     <string name="app_name">widgets</string>
     <string name="test_widget">test widget</string>
     <string name="test_widget_description">Test widget. Changes color and text when pressed.</string>
+    <string name="open_dev_options_widget">open Developer options</string>
+    <string name="open_dev_options_widget_description">Widget opens "Developer options" menu</string>
+    <string name="open_dev_options_widget_text">Open\nDev\noptions</string>
 </resources>
