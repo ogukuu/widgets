@@ -36,7 +36,7 @@ fun OpenDevOptionsWidgetGlanceContent(modifier: GlanceModifier) {
             style = TextStyle(
                 color = ColorProvider(Grey_44),
                 textAlign = TextAlign.Center,
-                fontSize = 14.sp
+                fontSize = 11.sp
             )
         )
     }
